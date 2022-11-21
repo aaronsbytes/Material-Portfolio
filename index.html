@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="pagepiling.css" />
+        <link rel="stylesheet" href="styles.css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+        
+        
+    </head>
+
+    <body>
+
+
+        <div id="links">
+            <ul>
+                <a href="https://github.com/9cqes"><i class='bx bxl-github'></i></a>
+                <a href="mailto:contact@nexa.dev"><i class='bx bxs-envelope' ></i></a>
+                <a href=""><i class='bx bx-message-square-dots'></i></a>
+            </ul>
+        </div>
+
+        <div id="scrollindicator"><span></span><p> SCROLL</p></div>
+
+        <div id="menu">
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Projects</a></li>
+            </ul>
+        </div>
+
+        <div id="header">
+            <img src="logo.webp" href="index.html"></img>
+            <div class="menu-icon">
+                <input class="menu-icon__cheeckbox" type="checkbox" onclick="toggleMenu();"/>
+                <div><span></span><span></span></div>
+            </div>
+        </div>
+
+
+        <div id="pagepiling">
+            <div id="home" class="section pp-scrollable">
+                <div class="msg">
+                    <h2>HEY, I'M</h2>
+                    <h1>NEXA</h1>
+                    <p>Developer / GNU/Linux/Privacy Enthusiast</p>
+                </div>
+                
+
+                <div data-relative-input="true" id="scene">
+                    <img data-depth="0.6" src="blop3.png"></img>
+                    <img data-depth="0.8" src="blop2.png"></img>
+                    <img data-depth="1.2" src="blop1.png"></img>         
+                </div>
+
+
+            </div>
+            <div id="about" class="section pp-scrollable">
+                
+            </div>
+            <div id="projects" class="section pp-scrollable">
+                
+            </div>
+        </div>
+
+
+
+
+
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.pagepiling.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script src="events.js"></script>
+        <script src="misc.js"></script>
+        <script>
+            var scene = document.getElementById('scene');
+            var parallaxInstance = new Parallax(scene);
+        </script>
+    </body>
+
+</html>
