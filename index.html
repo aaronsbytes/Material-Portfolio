@@ -1,8 +1,9 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="pagepiling.css" />
-        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pagepiling.css" />
+        <link rel="stylesheet" type="text/css" href="css/animations.css" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         
         
@@ -16,26 +17,38 @@
             <ul>
                 <a href="https://github.com/9cqes"><i class='bx bxl-github'></i></a>
                 <a href="mailto:contact@nexa.dev"><i class='bx bxs-envelope' ></i></a>
-                <a href=""><i class='bx bx-message-square-dots'></i></a>
+                <a href="z54jbl:matrix.org"><i class='bx bx-message-square-dots'></i></a>
             </ul>
         </div>
 
         <div id="scrollindicator"><span></span><p> SCROLL</p></div>
 
-        <div id="menu">
+        <div id="smartphone-menu">
             <ul>
-                <li><a>Home</a></li>
-                <li><a>About</a></li>
-                <li><a>Projects</a></li>
+                <li><a href="#1">Home</a></li>
+                <li><a href="#2">About</a></li>
+                <li><a href="#3">Projects</a></li>
             </ul>
         </div>
 
         <div id="header">
-            <img src="logo.webp" href="index.html"></img>
+
+            <img src="media/logo.webp" href="#1" id="headerlogo"></img>
+
+
             <div class="menu-icon">
-                <input class="menu-icon__cheeckbox" type="checkbox" onclick="toggleMenu();"/>
+                <input id="menu-icon__checkbox" type="checkbox" onclick="toggleMenu();"/>
                 <div><span></span><span></span></div>
             </div>
+
+            <div class="desktop-menu">
+                <ul>
+                    <li><a href="#1">Home</a></li>
+                    <li><a href="#2">About</a></li>
+                    <li><a href="#3">Projects</a></li>
+                </ul>
+            </div>
+
         </div>
 
 
@@ -44,14 +57,14 @@
                 <div class="msg">
                     <h2>HEY, I'M</h2>
                     <h1>NEXA</h1>
-                    <p>Developer / GNU/Linux/Privacy Enthusiast</p>
+                    <p>Developer / GNU / Linux / Privacy Enthusiast</p>
                 </div>
                 
 
                 <div data-relative-input="true" id="scene">
-                    <img data-depth="0.6" src="blop3.png"></img>
-                    <img data-depth="0.8" src="blop2.png"></img>
-                    <img data-depth="1.2" src="blop1.png"></img>         
+                    <img data-depth="0.6" src="media/blop3.png"></img>
+                    <img data-depth="0.8" src="media/blop2.png"></img>
+                    <img data-depth="1.2" src="media/blop1.png"></img>         
                 </div>
 
 
@@ -68,11 +81,11 @@
 
 
 
-        <script src="jquery.min.js"></script>
-        <script type="text/javascript" src="jquery.pagepiling.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-        <script src="events.js"></script>
-        <script src="misc.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+        <script src="js/parallax.min.js"></script>
+        <script src="js/events.js"></script>
+        <script src="js/misc.js"></script>
         <script>
             var scene = document.getElementById('scene');
             var parallaxInstance = new Parallax(scene);
