@@ -2,16 +2,16 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/styles.css"/>
-        <link rel="stylesheet" type="text/css" href="css/pagepiling.css" />
         <link rel="stylesheet" type="text/css" href="css/animations.css" />
+        <link rel="stylesheet" type="text/css" href="css/pagepiling.css" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        
-        
-        
     </head>
-
     <body>
 
+
+        <div id="cursor"><i></i></div>
+
+        <div id="preloader"><img src="media/logo.webp"></img></div>
 
         <div id="links">
             <ul>
@@ -21,9 +21,7 @@
             </ul>
         </div>
 
-        <div id="scrollindicator"><span></span><p> SCROLL</p></div>
-
-        <div id="smartphone-menu" class="animated">
+        <div id="smartphone-menu" class="SlideUp">
             <ul>
                 <li><a href="#1">Home</a></li>
                 <li><a href="#2">About</a></li>
@@ -32,15 +30,8 @@
         </div>
 
         <div id="header">
-
             <img src="media/logo.webp" href="#1" id="headerlogo"></img>
-
-
-            <div class="menu-icon">
-                <input id="menu-icon__checkbox" type="checkbox" onclick="toggleMenu();"/>
-                <div><span></span><span></span></div>
-            </div>
-
+            <div class="menu-icon"><input id="menu-icon__checkbox" type="checkbox" onclick="toggleMenu();"/><div><span></span><span></span></div></div>
             <div class="desktop-menu">
                 <ul>
                     <li><a href="#1">Home</a></li>
@@ -48,26 +39,22 @@
                     <li><a href="#3">Projects</a></li>
                 </ul>
             </div>
-
         </div>
 
 
         <div id="pagepiling">
+
             <div id="home" class="section pp-scrollable">
                 <div class="msg">
                     <h2>HEY, I'M</h2>
                     <h1>NEXA</h1>
                     <p>Developer / GNU / Linux / Privacy Enthusiast</p>
-                </div>
-                
-
+                </div>         
                 <div data-relative-input="true" id="scene">
-                    <img data-depth="0.6" src="media/blop3.png"></img>
-                    <img data-depth="0.8" src="media/blop2.png"></img>
-                    <img data-depth="1.2" src="media/blop1.png"></img>         
+                    <img data-depth="0.6" src="media/blop3.webp"></img>
+                    <img data-depth="0.8" src="media/blop2.webp"></img>
+                    <img data-depth="1.2" src="media/blop1.webp"></img>         
                 </div>
-
-
             </div>
 
 
@@ -75,34 +62,14 @@
                 <div class="text-container">
                     <p>I am a 20-year-old developer from Germany with a vast passion for coding, as well as hacking, privacy, and security. I am currently learning Rust. I have a strict FOSS policy which will be evident in every one of my new projects. I am constantly striving to improve. You can follow both my work and my self-growth here. Feel free to reach out to me.</p>
                 </div>
-
-                <div class="background-text">
-                    <h1>ABOUT</h1>
-                    <h1>ABOUT</h1>
-                    <h1>ABOUT</h1>
-                    <h1>ABOUT</h1>
-                    <h1>ABOUT</h1>
-                    <h1>ABOUT</h1>
-                    <h1>ABOUT</h1>
-                </div>
-
+                <div class="background-text" text="ABOUT"></div>
             </div>
 
 
             <div id="projects" class="section pp-scrollable">
-                
-
-
-                <div class="background-text">
-                    <h1>PROJECTS</h1>
-                    <h1>PROJECTS</h1>
-                    <h1>PROJECTS</h1>
-                    <h1>PROJECTS</h1>
-                    <h1>PROJECTS</h1>
-                    <h1>PROJECTS</h1>
-                    <h1>PROJECTS</h1>
-                </div>
+                <div class="background-text" text="PROJECTS"></div>
             </div>
+
         </div>
 
 
@@ -110,14 +77,10 @@
 
 
         <script src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+        <script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
         <script src="js/parallax.min.js"></script>
-        <script src="js/events.js"></script>
+        <script src="js/cursor.js"></script>
         <script src="js/misc.js"></script>
-        <script>
-            var scene = document.getElementById('scene');
-            var parallaxInstance = new Parallax(scene);
-        </script>
+        <script>startup();</script>
     </body>
-
 </html>

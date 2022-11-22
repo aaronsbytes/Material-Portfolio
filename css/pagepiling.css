@@ -67,7 +67,6 @@ html, body {
     z-index: 1;
     width: 100%;
     height: 100%;
-    cursor: pointer;
     text-decoration: none;
 }
 #pp-nav li .active span,
