@@ -17,6 +17,9 @@
 /* RESPONSIVE HOVER COLOR CHANGE */
 i:hover, a:hover, li:hover{ color: var(--accent); }
 
+/* MAKE ELEMENTS UNSELECTABLE */
+i,a,li,ul,img,h1,h2,h3,h4,h5,h6 { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+
 /* CURSOR */
 #cursor {
     position: relative;
@@ -88,15 +91,16 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     overflow: hidden;
 }
 
-#home #scene{
-    position: fixed;
-    left: 45%;
-    top: 20%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-}
-
-#home #scene img{ height: 400px; }
+#home #blobscene{ position: fixed; left: 45%; top: 20%; transform: translate(-50%, -50%); z-index: 4; }
+#home #blobscene img{ height: 400px; }
+#home #bgscene1{ position: fixed; left: 10%; top: 70%; transform: translate(-50%, -50%); z-index: 3; }
+#bgscene1 img{ height: 100px; }
+#home #bgscene2{ position: fixed; right: 10%; bottom: 70%; transform: translate(-50%, -50%); z-index: 3; }
+#bgscene2 img{ height: 50px; }
+#home #bgscene3{ position: fixed; right: 20%; top: 70%; transform: translate(-50%, -50%); z-index: 3; }
+#bgscene3 img{ height: 150px; }
+#home #bgscene4{ position: fixed; left: 20%; top: 30%; transform: translate(-50%, -50%); z-index: 3; }
+#bgscene4 img{ height: 30px; }
 
 #home .msg{
     position: fixed;
@@ -277,4 +281,6 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #scene{ left: 10%; top: 30%; }
     #home #scene img{ height: 600px; }
     .background-text{ left: -15%; }
+    #home #bgscene3{ display: none; }
+    #home #bgscene4{ display: none; }
 }

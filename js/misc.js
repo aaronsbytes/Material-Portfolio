@@ -33,8 +33,16 @@ $( document ).ready(function() {
 
 function startup(){
     document.addEventListener('contextmenu', event => event.preventDefault());
-    var scene = document.getElementById('scene');
-    var parallaxInstance = new Parallax(scene);
+    var blobscene = document.getElementById('blobscene');
+    var scene1 = document.getElementById('bgscene1');
+    var scene2 = document.getElementById('bgscene2');
+    var scene3 = document.getElementById('bgscene3');
+    var scene4 = document.getElementById('bgscene4');
+    var parallaxInstance = new Parallax(blobscene);
+    var parallaxInstance = new Parallax(scene1);
+    var parallaxInstance = new Parallax(scene2);
+    var parallaxInstance = new Parallax(scene3);
+    var parallaxInstance = new Parallax(scene4);
     backgroundText();
 }
 
