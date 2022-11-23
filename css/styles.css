@@ -173,7 +173,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 
 #projects .project{
     position: relative;
-    max-height: 100px;
+    max-height: 120px;
     white-space: pre;
     border: 2px dashed var(--border-col);
     border-radius: 15px;
@@ -187,6 +187,24 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     font-size: 25px;
     text-decoration: none;
     font-weight: 700;
+}
+
+#projects .project .flexContainer{
+    height: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    padding: 2px;
+}
+
+#projects .project .flexContainer i,p{ font-size: 15px; }
+
+#projects .project .flexContainer .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .background-text{
