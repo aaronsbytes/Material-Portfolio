@@ -167,7 +167,9 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     justify-content: center;
     align-items: center;
     max-width: 80%;
+    min-width: 60%;
     overflow: hidden;
+    z-index: 2;
 }
 
 #projects .project{
@@ -175,9 +177,11 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     max-height: 100px;
     white-space: pre;
     border: 2px dashed var(--border-col);
+    border-radius: 15px;
     margin-bottom: 10px;
     padding: 15px;
     overflow: hidden;
+    background-color: var(--bg-col);
 }
 
 #projects .project a,i{
@@ -315,4 +319,5 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #bgscene2{ top: 15%; }
     #home #bgscene3{ display: none; }
     #home #bgscene4{ display: none; }
+    #projects .container{ min-width: 85%; }
 }

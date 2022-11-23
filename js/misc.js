@@ -44,14 +44,17 @@ function startup(){
     var parallaxInstance = new Parallax(scene3);
     var parallaxInstance = new Parallax(scene4);
     backgroundText();
+    loadProjects();
 }
 
 function toggleMenu(){
     var menu = document.getElementById('smartphone-menu');
     if (menu.style.display === 'flex'){
         menu.style.display = 'none'
+        document.getElementById('menu-icon__checkbox').checked = false;
     }else{
         menu.style.display = 'flex';
+        document.getElementById('menu-icon__checkbox').checked = true;
     }
 }
 
@@ -66,5 +69,21 @@ function backgroundText(){
         var title = document.createElement('h1'); title.innerHTML = div.getAttribute('text');
         while (i < 15){ i = i + 1; div.appendChild(title.cloneNode(true)); }
         i = 0;
+    }
+}
+
+function loadProjects(){
+    var section = document.getElementById('projects');
+    var container = document.createElement('div'); section.appendChild(container); container.className = "container";
+    for (let i = 0; i < 5; i++) {
+        fetch('https://api.github.com/users/9cqes/repos', { method: 'GET' }) .then((response) => response.json()) .then((result) => {
+            try {
+                var item = document.createElement('div'); item.className = "project";
+                var title = document.createElement('a'); title.innerHTML = result[i]['name'] + ' '; title.setAttribute('href', result[i]['html_url']); item.appendChild(title);
+                var desc = document.createElement('p'); desc.innerHTML = result[i]['description']; item.appendChild(desc);  
+                var icon = document.createElement('i'); icon.className = 'bx bx-link-external'; title.appendChild(icon);     
+                container.appendChild(item);
+            } catch (error) {}
+        })
     }
 }
