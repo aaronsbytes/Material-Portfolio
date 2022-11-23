@@ -127,27 +127,6 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 
 #home #scrolldown{ text-align: center; mix-blend-mode: difference; }
 
-#about{
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-col);
-    background-image:
-    linear-gradient(var(--bg2-col) 1px, transparent 1px),
-    linear-gradient(90deg, var(--bg2-col) 1px, transparent 1px);
-    background-size: 100px 100px, 100px 100px, 40px 40px, 40px 40px;
-    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-}
-
-#about .text-container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: clamp(50%, 60%, 60%);
-    font-size: 20px;
-    z-index: 5;
-}
-
 #projects{
     background-color: var(--bg-col);
     background-image:
@@ -242,6 +221,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation-delay: 1.5s;
 }
 #header img{ height: 30px; padding-top: 25px;}
 #header img,.menu-icon{ padding-left: 25px; padding-right: 25px; }
@@ -266,8 +246,9 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     justify-content: space-evenly;
     align-items: center;
     font-size: 25px;
+    animation-delay: 0s;
 }
-#smartphone-menu li{ margin-bottom: 30px; }
+#smartphone-menu li{ margin-bottom: 35px; }
 #smartphone-menu ul{ list-style-type: none; padding: 30px; }
 #smartphone-menu a{ text-decoration: none; }
 #header .menu-icon{ transform: scale(1.5); }
@@ -338,5 +319,4 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #bgscene3{ display: none; }
     #home #bgscene4{ display: none; }
     #projects .container{ min-width: 85%; }
-
 }

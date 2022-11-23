@@ -3,6 +3,7 @@
     animation-iteration-count: 1; -webkit-animation-iteration-count: 1; -moz-animation-iteration-count: 1; -o-animation-iteration-count: 1; -ms-animation-iteration-count: 1;
     animation-fill-mode:forwards; -webkit-animation-fill-mode:forwards; -moz-animation-fill-mode:forwards; -o-animation-fill-mode:forwards; -ms-animation-fill-mode:forwards;
     opacity: 0;
+    animation-delay: 0.5s;
 }
 
 .SlideDown{

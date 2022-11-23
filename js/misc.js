@@ -3,7 +3,7 @@ $(document).ready(function() {
         direction: 'vertical',
         verticalCentered: false,
         sectionsColor: [],
-        anchors: ['1', '2', '3'],
+        anchors: ['1', '2'],
         scrollingSpeed: 400,
         easing: 'swing',
         loopBottom: true,
@@ -13,7 +13,7 @@ $(document).ready(function() {
             'textColor': '#cdd6f4',
             'bulletsColor': '#cdd6f4',
             'position': 'left',
-            'tooltips': ['Home', 'About', 'Projects']
+            'tooltips': ['Home', 'Projects']
         },
        	normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
@@ -21,7 +21,7 @@ $(document).ready(function() {
         keyboardScrolling: false,
         sectionSelector: '.section',
         animateAnchor: false,
-		onLeave: function(index, nextIndex, direction){ hideMenu(); },
+		onLeave: function(index, nextIndex, direction){ hideMenu(); reCallAnimation(nextIndex); },
 		afterLoad: function(anchorLink, index){ },
 		afterRender: function(){},
 	});
@@ -78,7 +78,7 @@ function loadProjects(){
     fetch('https://api.github.com/users/9cqes/repos', { method: 'GET' }) .then((response) => response.json()) .then((result) => {
         for(let i = result.length; i > 0; i--){
             try {
-                var item = document.createElement('div'); item.className = "project";
+                var item = document.createElement('div'); item.className = "project SlideUp";
                 var title = document.createElement('a'); title.innerHTML = result[i]['name'] + ' '; title.setAttribute('href', result[i]['html_url']); item.appendChild(title);
                 var desc = document.createElement('p'); desc.innerHTML = result[i]['description']; item.appendChild(desc);  
                 var icon = document.createElement('i'); icon.className = 'bx bx-link-external'; title.appendChild(icon);
@@ -124,8 +124,28 @@ function moveCursor(e) {
 }
 $(window).on('mousemove', moveCursor);
 
+function reCallAnimation(index){
+    if(index === 1){
+        for (var elem of document.getElementById('home').getElementsByClassName('SlideUp')){
+            elem.style.opacity = '0';
+            elem.classList.remove('SlideUp');
+            elem.offsetWidth;
+            elem.classList.add('SlideUp');
+        }
+    }else if(index === 2){
+        for (var elem of document.getElementById('projects').getElementsByClassName('SlideUp')){
+            elem.style.opacity = '0';
+            elem.classList.remove('SlideUp');
+            elem.offsetWidth;
+            elem.classList.add('SlideUp');
+        }
+    }
+}
 
-
-function test() {
-                    
+function animate() {
+    for (var elem of document.getElementsByClassName('SlideUp')){
+        elem.classList.remove('SlideUp');
+        elem.offsetWidth;
+        elem.classList.add('SlideUp');
+    }       
 }
