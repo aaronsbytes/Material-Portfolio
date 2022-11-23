@@ -62,7 +62,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     mix-blend-mode: difference;
 }
 #links a{ text-decoration: none; }
-#links i{ display: block; padding: 5px; }
+#links i{ display: block; padding: 5px; animation-delay: 1.2s; }
 
 
 /* PAGES */
@@ -86,6 +86,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     background-position: 0 0, 35px 35px;
     background-size: 35px 35px;
     overflow: hidden;
+    animation-delay: 0.8s;
 }
 
 #home #blobscene{ position: fixed; left: 45%; top: 20%; transform: translate(-50%, -50%); z-index: 4; }
@@ -248,7 +249,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     font-size: 25px;
     animation-delay: 0s;
 }
-#smartphone-menu li{ margin-bottom: 35px; }
+#smartphone-menu li{ margin-bottom: 35px; animation-delay: 0.2s; }
 #smartphone-menu ul{ list-style-type: none; padding: 30px; }
 #smartphone-menu a{ text-decoration: none; }
 #header .menu-icon{ transform: scale(1.5); }
