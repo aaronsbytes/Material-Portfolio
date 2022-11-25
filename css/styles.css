@@ -161,7 +161,10 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     padding: 15px;
     overflow: hidden;
     background-color: var(--bg-col);
+    transition: all 1s;
 }
+
+#projects .project:hover{ border: 2px dashed var(--text-col); }
 
 #projects .project a,i{
     font-size: 25px;
@@ -171,7 +174,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 
 #projects .project .flexContainer{
     height: 25px;
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -320,4 +323,5 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #bgscene3{ display: none; }
     #home #bgscene4{ display: none; }
     #projects .container{ min-width: 85%; }
+    #projects .project .flexContainer{ height: 25px; width: 100%; display: flex; justify-content: space-around; align-items: center; overflow: hidden; padding: 2px; }
 }
