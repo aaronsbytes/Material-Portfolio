@@ -222,13 +222,11 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     margin-bottom: 10px;
     height: auto;
     width: 400px;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
 #about .child-container .box img{ height: 200px; border-radius: 50%; }
 
 .background-text{ position: absolute; left: 2%; height: 100%; z-index: 0; display: block; overflow: hidden; }

@@ -80,31 +80,31 @@ function loadProjects(){
     fetch('https://api.github.com/users/9cqes/repos', { method: 'GET' }) .then((response) => response.json()) .then((result) => {
         for(let i = result.length; i > 0; i--){
             try {
-                var item = document.createElement('div'); item.className = "project SlideUp";
-                var title = document.createElement('a'); title.innerHTML = result[i]['name'] + ' '; title.setAttribute('href', result[i]['html_url']); item.appendChild(title);
-                var desc = document.createElement('p'); desc.innerHTML = result[i]['description']; item.appendChild(desc);  
-                var icon = document.createElement('i'); icon.className = 'bx bx-link-external'; title.appendChild(icon);
-                var flexContainer = document.createElement('div'); flexContainer.className = 'flexContainer'; item.appendChild(flexContainer);
+                let item = document.createElement('div'); item.className = "project SlideUp";
+                let title = document.createElement('a'); title.innerHTML = result[i]['name'] + ' '; title.setAttribute('href', result[i]['html_url']); item.appendChild(title);
+                let desc = document.createElement('p'); desc.innerHTML = result[i]['description']; item.appendChild(desc);  
+                let icon = document.createElement('i'); icon.className = 'bx bx-link-external'; title.appendChild(icon);
+                let flexContainer = document.createElement('div'); flexContainer.className = 'flexContainer'; item.appendChild(flexContainer);
                 //Stars
-                var stars = document.createElement('div'); stars.className = 'item';
-                var starIcon = document.createElement('i'); starIcon.className = 'bx bxs-star'; stars.appendChild(starIcon);
-                var starCount = document.createElement('p'); starCount.innerHTML = ' ' + result[i]['stargazers_count']; stars.appendChild(starCount);
+                let stars = document.createElement('div'); stars.className = 'item';
+                let starIcon = document.createElement('i'); starIcon.className = 'bx bxs-star'; stars.appendChild(starIcon);
+                let starCount = document.createElement('p'); starCount.innerHTML = ' ' + result[i]['stargazers_count']; stars.appendChild(starCount);
                 flexContainer.appendChild(stars);
-                //Forks
-                var forks = document.createElement('div'); forks.className = 'item';
-                var forkIcon = document.createElement('i'); forkIcon.className = 'bx bx-fork'; forks.appendChild(forkIcon);
-                var forkCount = document.createElement('p'); forkCount.innerHTML = ' ' + result[i]['forks']; forks.appendChild(forkCount);
-                flexContainer.appendChild(forks);
                 //Open Issues
-                var issues = document.createElement('div'); issues.className = 'item';
-                var issuesIcon = document.createElement('i'); issuesIcon.className = 'bx bxs-bug-alt'; issues.appendChild(issuesIcon);
-                var issuesCount = document.createElement('p'); issuesCount.innerHTML = ' ' + result[i]['open_issues_count']; issues.appendChild(issuesCount);
+                let issues = document.createElement('div'); issues.className = 'item';
+                let issuesIcon = document.createElement('i'); issuesIcon.className = 'bx bxs-bug-alt'; issues.appendChild(issuesIcon);
+                let issuesCount = document.createElement('p'); issuesCount.innerHTML = ' ' + result[i]['open_issues_count']; issues.appendChild(issuesCount);
                 flexContainer.appendChild(issues);
+                //Watchers
+                let watchers = document.createElement('div'); watchers.className = 'item';
+                let watchersIcon = document.createElement('i'); watchersIcon.className = 'bx bx-show'; watchers.appendChild(watchersIcon);
+                let watchersCount = document.createElement('p'); watchersCount.innerHTML = ' ' + result[i]['watchers_count']; watchers.appendChild(watchersCount);
+                flexContainer.appendChild(watchers);
                 //License
                 if (result[i]['license'] !== null){
-                    var license = document.createElement('div'); license.className = 'item';
-                    var licenseIcon = document.createElement('i'); licenseIcon.className = 'bx bx-book'; license.appendChild(licenseIcon);
-                    var licenseText = document.createElement('p'); licenseText.innerHTML = ' ' + result[i]['license']['name']; license.appendChild(licenseText);
+                    let license = document.createElement('div'); license.className = 'item';
+                    let licenseIcon = document.createElement('i'); licenseIcon.className = 'bx bx-book'; license.appendChild(licenseIcon);
+                    let licenseText = document.createElement('p'); licenseText.innerHTML = ' ' + result[i]['license']['name']; license.appendChild(licenseText);
                     flexContainer.appendChild(license);
                 }
                 container.appendChild(item);
