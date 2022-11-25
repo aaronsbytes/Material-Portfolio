@@ -3,7 +3,7 @@ $(document).ready(function() {
         direction: 'vertical',
         verticalCentered: false,
         sectionsColor: [],
-        anchors: ['1', '2'],
+        anchors: ['1', '2', '3'],
         scrollingSpeed: 400,
         easing: 'swing',
         loopBottom: true,
@@ -13,7 +13,7 @@ $(document).ready(function() {
             'textColor': '#cdd6f4',
             'bulletsColor': '#cdd6f4',
             'position': 'left',
-            'tooltips': ['Home', 'Projects']
+            'tooltips': ['Home', 'Projects', 'Experience']
         },
        	normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
@@ -30,6 +30,8 @@ $(document).ready(function() {
 $( document ).ready(function() {
     document.getElementById('preloader').remove();
 });
+
+
 
 function startup(){
     document.addEventListener('contextmenu', event => event.preventDefault());
@@ -126,6 +128,7 @@ $(window).on('mousemove', moveCursor);
 
 function reCallAnimation(index){
     if(index === 1){
+        document.title = 'NexaDev | Home';
         for (var elem of document.getElementById('home').getElementsByClassName('SlideUp')){
             elem.style.opacity = '0';
             elem.classList.remove('SlideUp');
@@ -133,7 +136,16 @@ function reCallAnimation(index){
             elem.classList.add('SlideUp');
         }
     }else if(index === 2){
+        document.title = 'NexaDev | Projects';
         for (var elem of document.getElementById('projects').getElementsByClassName('SlideUp')){
+            elem.style.opacity = '0';
+            elem.classList.remove('SlideUp');
+            elem.offsetWidth;
+            elem.classList.add('SlideUp');
+        }
+    }else if (index === 3){
+        document.title = 'NexaDev | About';
+        for (var elem of document.getElementById('about').getElementsByClassName('SlideUp')){
             elem.style.opacity = '0';
             elem.classList.remove('SlideUp');
             elem.offsetWidth;
