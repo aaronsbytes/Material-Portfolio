@@ -1,5 +1,29 @@
+var currentSection;
+
+function startup(){
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    var blobscene = new Parallax(document.getElementById('blobscene'));
+    var menublobscene1 = new Parallax(document.getElementById('menublobscene1'));
+    var menublobscene2 = new Parallax(document.getElementById('menublobscene2'));
+    var menublobscene3 = new Parallax(document.getElementById('menublobscene3'));
+    var scene1 = new Parallax(document.getElementById('bgscene1'));
+    var scene2 = new Parallax(document.getElementById('bgscene2'));
+    var scene3 = new Parallax(document.getElementById('bgscene3'));
+    var scene3 = new Parallax(document.getElementById('bgscene4'));
+    backgroundText();
+    loadProjects();
+}
+
+function getSection(index){ if(index === 1){ currentSection = 'home' } else if(index === 2){ currentSection = 'projects' } else if(index === 3) { currentSection = 'about' } }
+$( document ).ready(function() { document.getElementById('preloader').remove(); });
+function toggleMenu(){ var menu = document.getElementById('smartphone-menu'); if (menu.style.display === 'flex'){ menu.style.display = 'none'; document.getElementById('menu-icon__checkbox').checked = false; }else{ menu.style.display = 'flex'; document.getElementById('menu-icon__checkbox').checked = true; } }
+function hideMenu(){ document.getElementById('smartphone-menu').style.display = 'none'; document.getElementById('menu-icon__checkbox').checked = false; }
+function backgroundText(){ var i = 0; for (var div of document.getElementsByClassName('background-text')){ var title = document.createElement('h1'); title.innerHTML = div.getAttribute('text'); while (i < 20){ i = i + 1; div.appendChild(title.cloneNode(true)); } i = 0; } }
+
+
 $(document).ready(function() {
 	$('#pagepiling').pagepiling({
+        menu: '.menu',
         direction: 'vertical',
         verticalCentered: false,
         sectionsColor: [],
@@ -21,58 +45,11 @@ $(document).ready(function() {
         keyboardScrolling: false,
         sectionSelector: '.section',
         animateAnchor: false,
-		onLeave: function(index, nextIndex, direction){ hideMenu(); reCallAnimation(nextIndex); },
-		afterLoad: function(anchorLink, index){ },
+		onLeave: function(index, nextIndex, direction){ hideMenu(); reCallAnimation(nextIndex); getSection(nextIndex); },
+		afterLoad: function(anchorLink, index){},
 		afterRender: function(){},
 	});
 });
-
-$( document ).ready(function() {
-    document.getElementById('preloader').remove();
-});
-
-
-
-function startup(){
-    document.addEventListener('contextmenu', event => event.preventDefault());
-    var blobscene = document.getElementById('blobscene');
-    var scene1 = document.getElementById('bgscene1');
-    var scene2 = document.getElementById('bgscene2');
-    var scene3 = document.getElementById('bgscene3');
-    var scene4 = document.getElementById('bgscene4');
-    var parallaxInstance = new Parallax(blobscene);
-    var parallaxInstance = new Parallax(scene1);
-    var parallaxInstance = new Parallax(scene2);
-    var parallaxInstance = new Parallax(scene3);
-    var parallaxInstance = new Parallax(scene4);
-    backgroundText();
-    loadProjects();
-}
-
-function toggleMenu(){
-    var menu = document.getElementById('smartphone-menu');
-    if (menu.style.display === 'flex'){
-        menu.style.display = 'none'
-        document.getElementById('menu-icon__checkbox').checked = false;
-    }else{
-        menu.style.display = 'flex';
-        document.getElementById('menu-icon__checkbox').checked = true;
-    }
-}
-
-function hideMenu(){
-    document.getElementById('smartphone-menu').style.display = 'none';
-    document.getElementById('menu-icon__checkbox').checked = false;
-}
-
-function backgroundText(){
-    var i = 0;
-    for (var div of document.getElementsByClassName('background-text')){
-        var title = document.createElement('h1'); title.innerHTML = div.getAttribute('text');
-        while (i < 20){ i = i + 1; div.appendChild(title.cloneNode(true)); }
-        i = 0;
-    }
-}
 
 function loadProjects(){
     var section = document.getElementById('projects');
@@ -116,39 +93,20 @@ function loadProjects(){
     })
 }
 
-
 function reCallAnimation(index){
     if(index === 1){
-        document.title = 'NexaDev | Home';
-        for (var elem of document.getElementById('home').getElementsByClassName('SlideUp')){
-            elem.style.opacity = '0';
-            elem.classList.remove('SlideUp');
-            elem.offsetWidth;
-            elem.classList.add('SlideUp');
-        }
-    }else if(index === 2){
-        document.title = 'NexaDev | Projects';
-        for (var elem of document.getElementById('projects').getElementsByClassName('SlideUp')){
-            elem.style.opacity = '0';
-            elem.classList.remove('SlideUp');
-            elem.offsetWidth;
-            elem.classList.add('SlideUp');
-        }
-    }else if (index === 3){
-        document.title = 'NexaDev | About';
-        for (var elem of document.getElementById('about').getElementsByClassName('SlideUp')){
-            elem.style.opacity = '0';
-            elem.classList.remove('SlideUp');
-            elem.offsetWidth;
-            elem.classList.add('SlideUp');
-        }
+        for (let elem of document.getElementById('home').getElementsByClassName('SlideUp')){
+            elem.style.opacity = '0'; elem.classList.remove('SlideUp'); elem.offsetWidth; elem.classList.add('SlideUp');
+        } 
     }
-}
-
-function animate() {
-    for (var elem of document.getElementsByClassName('SlideUp')){
-        elem.classList.remove('SlideUp');
-        elem.offsetWidth;
-        elem.classList.add('SlideUp');
-    }       
+    if(index === 2){
+        for (let elem of document.getElementById('projects').getElementsByClassName('SlideUp')){
+            elem.style.opacity = '0'; elem.classList.remove('SlideUp'); elem.offsetWidth; elem.classList.add('SlideUp');
+        } 
+    }
+    if(index === 3){
+        for (let elem of document.getElementById('about').getElementsByClassName('SlideUp')){
+            elem.style.opacity = '0'; elem.classList.remove('SlideUp'); elem.offsetWidth; elem.classList.add('SlideUp');
+        } 
+    }
 }

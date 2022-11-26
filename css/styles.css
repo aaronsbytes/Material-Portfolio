@@ -29,16 +29,10 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     pointer-events: none;
     border-radius: 100%;
     border: 1px dashed var(--text-col);
-    background-color: transparent;
     mix-blend-mode: difference;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.4s;
-    transition-property: background-color, transform, border, cursor;
-    animation: spin 4s linear infinite;
+    transition: transform 0.4s;
+    animation: 4s spin linear infinite;
 }
-#cursor #cursor-icon{ color: var(--bg-col); font-weight: 500; font-size: 10px; text-align: center; opacity: 0; }
 
 
 /* PRELOADER */
@@ -282,6 +276,13 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 }
 .desktop-menu ul{ list-style-type: none; display: flex; }
 .desktop-menu li{ padding: 10px; }
+.desktop-menu a.active {
+    border-bottom: none;
+    padding-bottom: 0px;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml; charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 10 18'%3E%3Cstyle type='text/css'%3E.squiggle%7Banimation:shift .9s linear infinite; %7D@keyframes shift %7Bfrom %7Btransform:translateX(-10px); %7Dto %7Btransform:translateX(0); %7D%7D%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='1' class='squiggle' d='M0,17.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5' /%3E%3C/svg%3E");
+    color: var(--accent);
+}
 .desktop-menu a{ text-decoration: none; }
 #smartphone-menu{
     width: 100%;
@@ -290,16 +291,26 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     z-index: 4;
     left: 0;
     top: 0;
-    background-color: var(--bg-col);
     display: none;
-    justify-content: space-evenly;
+    font-size: 50px;
+    justify-content: left;
     align-items: center;
-    font-size: 25px;
     animation-delay: 0s;
+    background-color: var(--bg-col);
+    background-image:
+    linear-gradient(var(--bg2-col) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg2-col) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 40px 40px, 40px 40px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
-#smartphone-menu li{ margin-bottom: 35px; animation-delay: 0.2s; }
-#smartphone-menu ul{ list-style-type: none; padding: 30px; }
-#smartphone-menu a{ text-decoration: none; }
+#smartphone-menu li{ margin-bottom: 60px; animation-delay: 1.2s; }
+#smartphone-menu ul{ list-style-type: none; padding-top: 90px; z-index: 1; mix-blend-mode: difference; }
+#smartphone-menu ul a{ text-decoration: none; }
+#smartphone-menu a.active { border-bottom: none; padding-bottom: 0px; background-repeat: repeat; background-image: url("data:image/svg+xml; charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 10 18'%3E%3Cstyle type='text/css'%3E.squiggle%7Banimation:shift .9s linear infinite; %7D@keyframes shift %7Bfrom %7Btransform:translateX(-10px); %7Dto %7Btransform:translateX(0); %7D%7D%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='1' class='squiggle' d='M0,17.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5' /%3E%3C/svg%3E"); }
+#smartphone-menu #menublobscene1{ z-index: 0; position: absolute; right: 0; top: 0; }
+#smartphone-menu #menublobscene2{ z-index: 0; position: absolute; right: 0; top: 0; }
+#smartphone-menu #menublobscene3{ z-index: 0; position: absolute; right: 0; top: 0; }
+
 #header .menu-icon{ transform: scale(1.5); }
 .menu-icon {
     position: relative;
@@ -363,8 +374,9 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #scene img{ height: 600px; }
     .background-text{ left: 5%; }
     .background-text h1{ font-size: 80px; }
-    #home #blobscene{ position: fixed; left: 35%; top: 40%; transform: translate(-50%, -50%); z-index: 4; }
-    #home #bgscene2{ top: 15%; }
+    #home #blobscene{ display: none; }
+    #home #blobscene img{ height: 600px; }
+    #home #bgscene2{ top: 10%; } #home #bgscene2 img { height: 50px; }
     #home #bgscene3{ display: none; }
     #home #bgscene4{ display: none; }
     #projects .container{ min-width: 85%; }
