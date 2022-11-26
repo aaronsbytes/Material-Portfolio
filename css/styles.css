@@ -307,9 +307,6 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 #smartphone-menu ul{ list-style-type: none; padding-top: 90px; z-index: 1; mix-blend-mode: difference; }
 #smartphone-menu ul a{ text-decoration: none; }
 #smartphone-menu a.active { border-bottom: none; padding-bottom: 0px; background-repeat: repeat; background-image: url("data:image/svg+xml; charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 10 18'%3E%3Cstyle type='text/css'%3E.squiggle%7Banimation:shift .9s linear infinite; %7D@keyframes shift %7Bfrom %7Btransform:translateX(-10px); %7Dto %7Btransform:translateX(0); %7D%7D%3C/style%3E%3Cpath fill='none' stroke='white' stroke-width='1' class='squiggle' d='M0,17.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5 c 2.5,0,2.5,-1.5,5,-1.5 s 2.5,1.5,5,1.5' /%3E%3C/svg%3E"); }
-#smartphone-menu #menublobscene1{ z-index: 0; position: absolute; right: 0; top: 0; }
-#smartphone-menu #menublobscene2{ z-index: 0; position: absolute; right: 0; top: 0; }
-#smartphone-menu #menublobscene3{ z-index: 0; position: absolute; right: 0; top: 0; }
 
 #header .menu-icon{ transform: scale(1.5); }
 .menu-icon {
@@ -374,11 +371,12 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #scene img{ height: 600px; }
     .background-text{ left: 5%; }
     .background-text h1{ font-size: 80px; }
-    #home #blobscene{ display: none; }
+    #home #blobscene{ left: 0; top: 50%; }
     #home #blobscene img{ height: 600px; }
-    #home #bgscene2{ top: 10%; } #home #bgscene2 img { height: 50px; }
-    #home #bgscene3{ display: none; }
-    #home #bgscene4{ display: none; }
+    #home #bgscene1{ display: none; }
+    #home #bgscene2{ top: 15%; left: 80%; }
+    #home #bgscene3{ top: 55%; left: 5%; }
+    #home #bgscene4{ top: 15%; } #home #bgscene2 img { height: 50px; }
     #projects .container{ min-width: 85%; }
     #projects .project .flexContainer{ height: 25px; width: 100%; display: flex; justify-content: space-around; align-items: center; overflow: hidden; padding: 2px; }
     #about .child-container{ z-index: 1; width: 80%; height: 80%; display: block; }

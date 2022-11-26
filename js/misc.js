@@ -3,9 +3,6 @@ var currentSection;
 function startup(){
     document.addEventListener('contextmenu', event => event.preventDefault());
     var blobscene = new Parallax(document.getElementById('blobscene'));
-    var menublobscene1 = new Parallax(document.getElementById('menublobscene1'));
-    var menublobscene2 = new Parallax(document.getElementById('menublobscene2'));
-    var menublobscene3 = new Parallax(document.getElementById('menublobscene3'));
     var scene1 = new Parallax(document.getElementById('bgscene1'));
     var scene2 = new Parallax(document.getElementById('bgscene2'));
     var scene3 = new Parallax(document.getElementById('bgscene3'));
