@@ -10,7 +10,7 @@
 }
 
 /* GLOBAL PROPERTIES */
-*{ font-family: poppins; color: var(--text-col); cursor: none; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+*{ font-family: poppins; color: var(--text-col); user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
 /* SELECTION */
 ::selection{ color: var(--bg-col); background-color: var(--accent); }
 ::-moz-selection{ color: var(--bg-col); background-color: var(--accent); }
@@ -19,20 +19,27 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 
 /* CURSOR */
 #cursor {
-    position: relative;
-    width: 25px;
-    height: 25px;
-    margin: -15px 0 0 -15px;
-    border-radius: 50%;
-    background-color: var(--text-col);
-    transition: transform 0.2s ease-out;
-    z-index: 9999;
-    pointer-events: none;
-    mix-blend-mode: difference;
+    position: absolute;
+    width: 15px;
+    height: 15px;
     top: 50%;
     left: 50%;
+    margin: -10px 0 0 -10px;
+    z-index: 999999999999;
+    pointer-events: none;
+    border-radius: 100%;
+    border: 1px dashed var(--text-col);
+    background-color: transparent;
+    mix-blend-mode: difference;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s;
+    transition-property: background-color, transform, border, cursor;
+    animation: spin 4s linear infinite;
 }
-#cursor.is-moving{ transform: scale(0.8); }
+#cursor #cursor-icon{ color: var(--bg-col); font-weight: 500; font-size: 10px; text-align: center; opacity: 0; }
+
 
 /* PRELOADER */
 #preloader{
@@ -125,7 +132,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 
 #home .msg p{
     font-size: clamp(10px, 15px, 20px);
-    text-align: left;
+    text-align: center;
     order: 2;
 }
 
@@ -165,6 +172,25 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     overflow: hidden;
     background-color: var(--bg-col);
     transition: all 1s;
+}
+
+#projects .project .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#projects .project .header .titleContainer img{
+    height: 25px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 50%;
+}
+
+#projects .project .header .titleContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #projects .project:hover{ border: 2px dashed var(--text-col); }
@@ -212,7 +238,6 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 #about .child-container{
     width: 80%;
     height: 80%;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -227,7 +252,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     align-items: center;
     text-align: center;
 }
-#about .child-container .box img{ height: 200px; border-radius: 50%; }
+#about .child-container .box img{ height: 200px; border-radius: 50%; transition: 0.2s; z-index: 2; }
 
 .background-text{ position: absolute; left: 2%; height: 100%; z-index: 0; display: block; overflow: hidden; }
 .background-text h1{ color: transparent; font-size: 120px; font-weight: 700; line-height: 20px; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: var(--bg2-col); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
@@ -327,7 +352,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
 
 @media (max-width: 650px){
     #cursor{ display: none; }
-    #pp-nav { right: 5%; bottom: 5%; mix-blend-mode: difference; }
+    #pp-nav { right: 5%; bottom: 3%; mix-blend-mode: difference; }
     .menu-icon{ display: block; }
     .desktop-menu{ display: none; }
     #links{ position: fixed; bottom: 0; left: 0; z-index: 4; font-size: 25px; height: auto; width: 40px; text-align: left; transform: translate(-40%, -0%); }
@@ -344,7 +369,7 @@ i:hover, a:hover, li:hover{ color: var(--accent); }
     #home #bgscene4{ display: none; }
     #projects .container{ min-width: 85%; }
     #projects .project .flexContainer{ height: 25px; width: 100%; display: flex; justify-content: space-around; align-items: center; overflow: hidden; padding: 2px; }
-    #about .child-container{ z-index: 1; width: 80%; height: 80%; overflow: hidden; display: block; }
+    #about .child-container{ z-index: 1; width: 80%; height: 80%; display: block; }
     #about .child-container .box{ position: relative; width: 100%; }
     #about .child-container .box img{ height: 150px; }
 }

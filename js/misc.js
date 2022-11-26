@@ -13,7 +13,7 @@ $(document).ready(function() {
             'textColor': '#cdd6f4',
             'bulletsColor': '#cdd6f4',
             'position': 'left',
-            'tooltips': ['Home', 'Projects', 'Experience']
+            'tooltips': []
         },
        	normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
@@ -69,7 +69,7 @@ function backgroundText(){
     var i = 0;
     for (var div of document.getElementsByClassName('background-text')){
         var title = document.createElement('h1'); title.innerHTML = div.getAttribute('text');
-        while (i < 15){ i = i + 1; div.appendChild(title.cloneNode(true)); }
+        while (i < 20){ i = i + 1; div.appendChild(title.cloneNode(true)); }
         i = 0;
     }
 }
@@ -81,9 +81,12 @@ function loadProjects(){
         for(let i = result.length; i > 0; i--){
             try {
                 let item = document.createElement('div'); item.className = "project SlideUp";
-                let title = document.createElement('a'); title.innerHTML = result[i]['name'] + ' '; title.setAttribute('href', result[i]['html_url']); item.appendChild(title);
+                let itemHeader = document.createElement('div'); itemHeader.className = 'header'; item.appendChild(itemHeader);
+                let titleContainer = document.createElement('div'); titleContainer.className = 'titleContainer'; itemHeader.appendChild(titleContainer);
+                let avatar = document.createElement('img'); avatar.src = result[i]['owner']['avatar_url']; avatar.setAttribute('href', result[i]['owner']['html_url']); titleContainer.appendChild(avatar);
+                let title = document.createElement('a'); title.innerHTML = result[i]['name'] + ' '; title.setAttribute('href', result[i]['html_url']); titleContainer.appendChild(title);
                 let desc = document.createElement('p'); desc.innerHTML = result[i]['description']; item.appendChild(desc);  
-                let icon = document.createElement('i'); icon.className = 'bx bx-link-external'; title.appendChild(icon);
+                let icon = document.createElement('a'); icon.className = 'bx bx-link-external res-link'; icon.setAttribute('href', result[i]['html_url']); itemHeader.appendChild(icon);
                 let flexContainer = document.createElement('div'); flexContainer.className = 'flexContainer'; item.appendChild(flexContainer);
                 //Stars
                 let stars = document.createElement('div'); stars.className = 'item';
@@ -113,18 +116,6 @@ function loadProjects(){
     })
 }
 
-var $cursor = $('#cursor');
-function moveCursor(e) {
-  $cursor.addClass('is-moving');
-  $cursor.css({"top": e.pageY, "left": e.pageX});
-
-  clearTimeout(timer2);
-
-   var timer2 = setTimeout(function() {
-       $cursor.removeClass('is-moving');
-   }, 300);
-}
-$(window).on('mousemove', moveCursor);
 
 function reCallAnimation(index){
     if(index === 1){
