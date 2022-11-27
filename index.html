@@ -12,6 +12,9 @@
     </head>
     <body>
 
+        <!--Pixel-Layer-->
+        <div id="pixelLayer"></div>
+
         <!-- Preloader -->
         <div id="preloader"><img src="media/logo.webp"></img></div>
 
@@ -26,10 +29,14 @@
         <!-- Fullscreen Menu -->
         <div id="smartphone-menu" class="SlideUp">
             <ul class="menu">
-                <li style="animation-delay: 0.3s;" class="SlideUp"><a data-menuanchor="1" href="#1">HOME</a></li>
+                <li style="animation-delay: 0.3s;" class="SlideUp"><a class="active" data-menuanchor="1" href="#1">HOME</a></li>
                 <li style="animation-delay: 0.5s;" class="SlideUp"><a data-menuanchor="2" href="#2">PROJECTS</a></li>
                 <li style="animation-delay: 0.8s;" class="SlideUp"><a data-menuanchor="3" href="#3">ABOUT</a></li>
             </ul>
+            <div class="links">
+                <a href="https://github.com/9cqes">GITHUB</a>
+                <a href="mailto:contact@nexa.dev">EMAIL</a>
+            </div>
         </div>
 
         <!-- Header -->
@@ -38,7 +45,7 @@
             <div class="menu-icon"><input id="menu-icon__checkbox" type="checkbox" onclick="toggleMenu();"/><div><span></span><span></span></div></div>
             <div class="desktop-menu">
                 <ul class="menu">
-                    <li><a data-menuanchor="1" href="#1">Home</a></li>
+                    <li><a data-menuanchor="1" class="active" href="#1">Home</a></li>
                     <li><a data-menuanchor="2" href="#2">Projects</a></li>
                     <li><a data-menuanchor="3" href="#3">About</a></li>
                 </ul>
@@ -58,21 +65,22 @@
                     <h1 class="SlideUp">NEXA</h1>
                     <p class="SlideUp">Developer / Designer / Privacy Enthusiast</p>
                     <div id="scrolldown"><a href="#2"><i class='bx bxs-chevron-down SlideUp'></i></a></div>
-                </div>         
-                <div data-relative-input="true" id="blobscene" class="SlideUp">
-                    <img data-depth="0.1" src="media/objects/blop3.webp"></img>
-                    <img data-depth="0.2" src="media/objects/blop2.webp"></img>
-                    <img data-depth="0.4" src="media/objects/blop1.webp"></img>
                 </div>
-                <div data-relative-input="true" class="SlideUp" id="bgscene1"><img data-depth="0.2" src="media/objects/object1.webp"></img></div>
-                <div data-relative-input="true" class="SlideUp" id="bgscene2"><img data-depth="0.4" src="media/objects/object3.webp"></img></div>
-                <div data-relative-input="true" class="SlideUp" id="bgscene3"><img data-depth="0.6" src="media/objects/object4.webp"></img></div>
-                <div data-relative-input="true" class="SlideUp" id="bgscene4"><img data-depth="0.7" src="media/objects/object2.webp"></img></div>
+                <div class="circle"></div>
+                <div data-relative-input="true" id="blobscene" class="SlideUp">
+                    <img data-depth="0.2" src="media/objects/blop1.webp"></img>
+                    <img data-depth="0.3" src="media/objects/blop3.webp"></img>
+                    <img data-depth="0.4" src="media/objects/blop2.webp"></img>
+                </div>
+                <div data-relative-input="true" class="SlideUp" id="bgscene1"><img data-depth="0.1" src="media/objects/object1.webp"></img></div>
+                <div data-relative-input="true" class="SlideUp" id="bgscene2"><img data-depth="0.1" src="media/objects/object3.webp"></img></div>
+                <div data-relative-input="true" class="SlideUp" id="bgscene3"><img data-depth="0.1" src="media/objects/object4.webp"></img></div>
+                <div data-relative-input="true" class="SlideUp" id="bgscene4"><img data-depth="0.1" src="media/objects/object2.webp"></img></div>
+                <div class="background-text" text="NEXA"></div>
             </div>
 
             <!-- Projects -->
             <div id="projects" class="section">
-                
                 <div class="background-text" text="PROJECTS"></div>
             </div>
 
